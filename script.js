@@ -12,15 +12,15 @@ orderNumberField.innerText = orderNumber;
 answerField.innerText = `Вы загадали число ${answerNumber }?`;
 
 document.getElementById('btnRetry').addEventListener('click', function () {
-    if (btnRetry.clicked == true || gameRun == false)
-{
+    gameRun = false;
+    gameRun = true;
     minValue = parseInt(prompt('Минимальное значение числа для игры','0'));
     maxValue = parseInt(prompt('Максимальное значение числа для игры','100'));
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     orderNumberField.innerText = 1;
     orderNumber = 1;
     answerNumber  = Math.floor((minValue + maxValue) / 2);
-    phraseRandom = Math.round( Math.random())*3;
+    phraseRandom = Math.round( Math.random()*3);
     if (phraseRandom === 1){
         answerField.innerText = `Вы загадали число ${answerNumber }?`;
     }
@@ -30,9 +30,9 @@ document.getElementById('btnRetry').addEventListener('click', function () {
     else {
         answerField.innerText = `Наверное, это число ${answerNumber }?`;
     }
-    gameRun = true;
+    
    
-}
+
     
 })
 
@@ -51,7 +51,16 @@ document.getElementById('btnOver').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            phraseRandom = Math.round( Math.random()*3);
+            if (phraseRandom === 1){
+                answerField.innerText = `Вы загадали число ${answerNumber }?`;
+        }
+            else if (phraseRandom === 2){
+                answerField.innerText = `Да это легко! Ты загадал ${answerNumber }?`;
+        }
+            else {
+                answerField.innerText = `Наверное, это число ${answerNumber }?`;
+        }
         }
     }
 })
@@ -71,7 +80,16 @@ document.getElementById('btnLess').addEventListener('click', function () {
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            phraseRandom = Math.round( Math.random()*3);
+            if (phraseRandom === 1){
+                answerField.innerText = `Вы загадали число ${answerNumber }?`;
+        }
+            else if (phraseRandom === 2){
+                answerField.innerText = `Да это легко! Ты загадал ${answerNumber }?`;
+        }
+            else {
+                answerField.innerText = `Наверное, это число ${answerNumber }?`;
+        }
         }
     }
 })
@@ -79,7 +97,16 @@ document.getElementById('btnLess').addEventListener('click', function () {
 
 document.getElementById('btnEqual').addEventListener('click', function () {
     if (gameRun){
-        answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
+        phraseRandom = Math.round( Math.random()*3);
+            if (phraseRandom === 1){
+                answerField.innerText = `Я всегда угадываю\n\u{1F60E}`;
+        }
+            else if (phraseRandom === 2){
+                answerField.innerText = `Так и знал`;
+        }
+            else {
+                answerField.innerText = `Это было легко`;
+        }
         gameRun = false;
     }
 })

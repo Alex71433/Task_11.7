@@ -2,3 +2,12 @@
     height: 100vh;
     font-family: 'Open Sans', monospace;
 }
+
+body {
+    background-color: greenyellow;
+}
+
+#btnRetry {
+    background-color: darkblue;
+    color: yellow;
+}
